@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Deploy with Helm') {
+            steps {
+                script {
+                    sh 'C:\ProgramData\chocolatey\bin\helm.exe upgrade --install my-webapp ./webapp --namespace default'
+                }
+            }
+        }
+    }
+}
